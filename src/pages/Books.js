@@ -17,7 +17,7 @@ const Books = () => {
         setBooks(json.pets);
     }
     return (
-        <div>
+        <div className="main">
 
             <Results books={books} />
         </div>

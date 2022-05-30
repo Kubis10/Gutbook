@@ -1,21 +1,20 @@
 import Book from "./Book";
 
-const Results = ({ pets }) => {
+const Results = ({ books }) => {
   return (
     <div className="search">
-      {!pets.length ? (
+      {!books.length ? (
         <h1>No Books Found</h1>
       ) : (
-        pets.map((book) => {
+        books.map((results) => {
           return (
             <Book
-              animal={book.animal}
-              key={book.id}
-              name={book.name}
-              breed={book.breed}
-              images={book.images}
-              location={`${book.city}, ${book.state}`}
-              id={book.id}
+              title={results.title}
+              key={results.id}
+              description={results.description}
+              bookshelves={results.bookshelves}
+              images={results.resources}
+              id={results.id}
             />
           );
         })
