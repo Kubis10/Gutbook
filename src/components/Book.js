@@ -5,7 +5,11 @@ const Book = (props) => {
 
     let hero = "http://pets-images.dev-apis.com/pets/none.jpg";
     if (images.length) {
-        hero = images[0];
+        for (let i = 0; i < images.length; i++) {
+            if (images[i].type === "image/jpeg") {
+                hero = images[i].uri;
+            }
+        }
     }
     return (
         <Link to={`/book/${id}`} className="book">

@@ -14,7 +14,7 @@ const Books = () => {
         );
         const json = await res.json();
 
-        setBooks(json.pets);
+        setBooks(json.results);
     }
     return (
         <div className="main">
