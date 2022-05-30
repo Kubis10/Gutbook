@@ -116,6 +116,21 @@ nav a:nth-child(4) {
   padding-bottom: 50px;
   text-align: center;
 }
+.searpage{
+  padding-top: 80px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+.details{
+  grid-area: 1 / 1 / 6 / 3;
+}
+.search{
+  grid-area: 1 / 3 / 6 / 6;
+  text-align: center;
+}
 /* Book */
 
 /* Favorites */

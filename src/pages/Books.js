@@ -17,11 +17,10 @@ const Books = () => {
         setBooks(json.results);
     }
     return (
-        <div className="main">
-
+        <div className="searpage">
             <Results books={books} />
         </div>
-    )
-}
+    );
+};
 
-export default Books
+export default Books;
