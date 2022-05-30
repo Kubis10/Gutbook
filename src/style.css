@@ -1,0 +1,10 @@
+* {
+  box-sizing: border-box;
+  color: whitesmoke;
+}
+
+body {
+  background-color: #121212;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}

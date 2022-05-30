@@ -1,31 +1,27 @@
-import React, { useEffect, useState } from 'react'
-import * as BooksAPI from './components/BooksAPI'
-import SearchBook from './components/SearchBook'
-import ListBooks from './components/ListBooks'
-import { Route } from 'react-router-dom'
-import './App.css'
+import { render } from "react-dom";
+import { StrictMode, useState } from "react";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import ThemeContext from "./components/ThemeContext";
+import Home from "./pages/Home";
+import Book from "./pages/Book";
 
 const App = () => {
-  const [books, setBooks] = useState([]);
-
-  // Return All Books
-  function showAll() {
-    BooksAPI.getAll().then((books) => {
-      setBooks(books)
-    })
-  }
-
-  // Display All Books When App Loaded
-  useEffect(() => {
-    showAll()
-  });
-
+  const theme = useState("dark");
   return (
-    <div className="app">
-      <Route exact path='/' render={() => <ListBooks books={this.state.books} showAll={this.showAll()} />} />
-      <Route path='/search' render={() => <SearchBook />} />
-    </div>
+    <StrictMode>
+      <ThemeContext.Provider value={theme}>
+        <BrowserRouter>
+          <header>
+            <Link to="/">Adopt Me!</Link>
+          </header>
+          <Routes>
+            <Route path="/book/:id" element={<Book />} />
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </BrowserRouter>
+      </ThemeContext.Provider>
+    </StrictMode>
   );
 };
 
-export default App;
+render(<App />, document.getElementById("root"));
