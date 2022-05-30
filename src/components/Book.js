@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const Book = (props) => {
-    const { title, description, bookshelves, images, id } = props;
+    const { title, author, description, bookshelves, images, id } = props;
 
     let hero = "https://dummyimage.com/300/09f.png/fff";
     if (images.length) {
@@ -18,10 +18,9 @@ const Book = (props) => {
             </div>
             <div className="info">
                 <h1>{title}</h1>
+                <h2>{author}</h2>
                 <h2>{`${description}`}</h2>
-                {bookshelves.forEach(tyb => {
-                    return <li>{tyb}</li>;
-                })}
+                {bookshelves.map((bookshelf) => bookshelf).join(", ")}
             </div>
         </Link>
     );

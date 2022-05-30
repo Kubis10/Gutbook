@@ -10,6 +10,7 @@ const Results = ({ books }) => {
           return (
             <Book
               title={results.title}
+              author={results.agents[0].person}
               key={results.id}
               description={results.description}
               bookshelves={results.bookshelves}
