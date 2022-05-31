@@ -3,6 +3,7 @@ import Results from "../components/Results";
 
 const Books = () => {
     const [books, setBooks] = useState([]);
+    const [search, setSearch] = useState("");
 
     useEffect(() => {
         requestBooks();
@@ -10,7 +11,7 @@ const Books = () => {
 
     async function requestBooks() {
         const res = await fetch(
-            `https://gnikdroy.pythonanywhere.com/api/book/?format=json`
+            `https://gnikdroy.pythonanywhere.com/api/book/?format=json&?search=${search}`
         );
         const json = await res.json();
 
@@ -18,6 +19,13 @@ const Books = () => {
     }
     return (
         <div className="searpage">
+            <form onSubmit={(e) => {
+                e.preventDefault();
+                requestBooks();
+            }}>
+                <input type="text" placeholder="Search for a book" value={search} onChange={(e) => setSearch(e.target.value)} />
+                <button type="submit">Search</button>
+            </form>
             <Results books={books} />
         </div>
     );
