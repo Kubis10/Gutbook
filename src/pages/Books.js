@@ -19,7 +19,7 @@ const Books = () => {
         setBooks(json.results);
     }
     return (
-        <div className="searpage">
+        <div className="searchPage">
             <form onSubmit={(e) => {
                 e.preventDefault();
                 requestBooks()

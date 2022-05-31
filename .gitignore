@@ -5,3 +5,6 @@ dist/
 .DS_Store
 coverage/
 .vscode/
+
+# Local Netlify folder
+.netlify
