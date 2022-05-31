@@ -10,18 +10,19 @@ const Books = () => {
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
     async function requestBooks() {
+        let word = search.replace(/\s/g, "+")
         const res = await fetch(
-            `https://gnikdroy.pythonanywhere.com/api/book/?format=json&?search=${search}`
+            `https://gnikdroy.pythonanywhere.com/api/book/?format=json&search=${word}`
         );
         const json = await res.json();
-
+        console.log(json.results);
         setBooks(json.results);
     }
     return (
         <div className="searpage">
             <form onSubmit={(e) => {
                 e.preventDefault();
-                requestBooks();
+                requestBooks()
             }} className="searchForm">
                 <div className="form__group field">
                     <input type="text" placeholder="Search for a book" className="form__field" name="book" id="book" value={search} onChange={(e) => setSearch(e.target.value)} />

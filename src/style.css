@@ -130,8 +130,8 @@ nav a:nth-child(4) {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(5, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
 }
 .book{
   width: 100%;
@@ -151,7 +151,7 @@ nav a:nth-child(4) {
   padding: 15px 0 0;
   margin-top: 10px;
   width: 80%;
-  margin: 10% auto;
+  margin: 20px auto;
 }
 
 .form__field {

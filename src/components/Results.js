@@ -4,7 +4,7 @@ const Results = ({ books }) => {
   return (
     <div className="search">
       {!books.length ? (
-        <h1>No Books Found</h1>
+        <h2>No Books Found</h2>
       ) : (
         books.map((results) => {
           return (
