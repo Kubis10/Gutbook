@@ -22,9 +22,12 @@ const Books = () => {
             <form onSubmit={(e) => {
                 e.preventDefault();
                 requestBooks();
-            }}>
-                <input type="text" placeholder="Search for a book" value={search} onChange={(e) => setSearch(e.target.value)} />
-                <button type="submit">Search</button>
+            }} className="searchForm">
+                <div className="form__group field">
+                    <input type="text" placeholder="Search for a book" className="form__field" name="book" id="book" value={search} onChange={(e) => setSearch(e.target.value)} />
+                    <label htmlFor="book" className="form__label">Book</label>
+                </div>
+                <button type="submit" className="button-33">Search</button>
             </form>
             <Results books={books} />
         </div>
