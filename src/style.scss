@@ -231,4 +231,10 @@ nav {
 //book
 .bookPage {
 	padding-top: 80px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	.image-container{
+		text-align: center;
+	}
 }
