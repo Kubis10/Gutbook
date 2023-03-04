@@ -35,9 +35,18 @@ const Book = (props) => {
           }</h2>
           <h2>{props.bookshelves.map((bookshelf) => bookshelf).join(", ")}</h2>
           <p>{props.description}</p>
+          <p>You can view this book in one of following ways:</p>
             <ul>
               {
-                props.resources.map((resource) => resource.uri).join(", ")
+                props.resources.map((resource) => {
+                  if(resource.type !== "image/jpeg"){
+                    return(
+                      <li key={resource.uri}>
+                        <a href={resource.uri}>{resource.type}</a>
+                      </li>
+                    )
+                  }
+                })
               }
             </ul>
         </div>
