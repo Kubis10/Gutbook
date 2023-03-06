@@ -12,7 +12,7 @@ const Books = () => {
     async function requestBooks() {
         let word = search.replace(/\s/g, "+")
         const res = await fetch(
-            `https://gnikdroy.pythonanywhere.com/api/book/?format=json&search=${word}`
+            `https://gutendex.com/books/?format=json&search=${word}`
         );
         const json = await res.json();
         console.log(json.results);

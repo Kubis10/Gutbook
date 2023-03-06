@@ -10,10 +10,10 @@ const Results = ({ books }) => {
           return (
             <Book
               title={results.title}
-              author={results.agents[0].person}
+              author={results.authors[0].person}
               key={results.id}
               bookshelves={results.bookshelves}
-              images={results.resources}
+              images={results.formats}
               id={results.id}
             />
           );

@@ -11,7 +11,7 @@ const Details = () => {
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   async function getBook() {
-    const res = await fetch(`https://gnikdroy.pythonanywhere.com/api/book${id}/`);
+    const res = await fetch(`https://gutendex.com/books${id}/`);
     const data = await res.json();
     setBook(data);
   }

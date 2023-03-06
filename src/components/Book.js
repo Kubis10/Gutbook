@@ -6,15 +6,14 @@ const Book = (props) => {
   let hero = "https://dummyimage.com/300/09f.png/fff";
   if (images.length) {
     for (let i = 0; i < images.length; i++) {
-      if (images[i].type === "image/jpeg") {
-        if (images[i].uri.endsWith("cover.medium.jpg")) {
+      console.log(images[i]);
+        if (images[i].endsWith("cover.medium.jpg")) {
           hero = images[i].uri;
         }
-      }
     }
   }
   return (
-    <Link to={`/book/${id}`} className="book">
+    <Link to={`/books/${id}`} className="book">
       <div className="image-container">
         <img src={hero} alt={title} />
       </div>
