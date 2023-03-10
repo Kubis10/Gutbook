@@ -12,7 +12,6 @@ const Results = ({ books }) => {
               title={results.title}
               author={results.authors[0].person}
               key={results.id}
-              bookshelves={results.bookshelves}
               images={results.formats}
               id={results.id}
             />
