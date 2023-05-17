@@ -132,12 +132,14 @@ nav {
 .book {
 	width: 100%;
 	max-width: 400px;
+	min-height: 400px;
 	height: auto;
 	background-color: $background-color_2;
 	border-radius: 5px;
 	box-shadow: 0px 0px 10px #1abc9c;
 	cursor: pointer;
 	margin: 10px;
+	text-decoration: none;
 }
 .searchForm {
 	text-align: center;
