@@ -7,10 +7,11 @@ const Results = ({ books }) => {
         <h2>No Books Found</h2>
       ) : (
         books.map((results) => {
+          const author = results.authors && results.authors[0] ? results.authors[0].name : "Unknown";
           return (
             <Book
               title={results.title}
-              author={results.authors[0].person}
+              author={author}
               key={results.id}
               images={results.formats}
               id={results.id}
